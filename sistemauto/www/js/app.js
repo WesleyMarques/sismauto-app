@@ -7,21 +7,20 @@
     angular.module('sistemauto.service', []);
 
     var app = angular.module('sistemauto', [
+        'ionic',
         'sistemauto.service',
         'sistemauto.controller',
     ]);
 
 
     app.config(function($stateProvider, $urlRouterProvider) {
-
-        $urlRouterProvider.otherwise('/');
-
         $stateProvider
-            .state('home', {
-                url: '/home',
-                templateUrl: '../view/alunos.html',
-                controller: 'AlunosController'
+            .state('login', {
+                url: '/login',
+                templateUrl: '../templates/login.html',
+                controller: 'LoginController as loginCtrl'
             });
+        $urlRouterProvider.otherwise('/login');
     });
 
 
