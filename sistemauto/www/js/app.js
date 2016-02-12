@@ -8,6 +8,7 @@
 
     var app = angular.module('sistemauto', [
         'ionic',
+        'ionic-material',
         'sistemauto.service',
         'sistemauto.controller',
     ]);
@@ -18,9 +19,23 @@
             .state('login', {
                 url: '/login',
                 templateUrl: '../templates/login.html',
-                controller: 'LoginController as loginCtrl'
-            });
-        $urlRouterProvider.otherwise('/login');
+                
+            })
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: '../templates/menu.html'
+        })
+         .state('app.home', {
+            url: '/home',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/login.html'                    
+                }
+            }
+        });
+
+        $urlRouterProvider.otherwise('/home');
     });
 
 
