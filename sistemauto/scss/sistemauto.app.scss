@@ -15,9 +15,20 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$dark-primary-color: #FFA000;
+$primary-color:#FFC107;
+$light-primary-color: #FFECB3;
+$text-icons: #212121;
+$accent-color: #FF5722;
+$primary-text: #212121;
+$secundary-text: #727272;
+$divider-color: #B6B6B6;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+@import "www/scss/menu";
 
