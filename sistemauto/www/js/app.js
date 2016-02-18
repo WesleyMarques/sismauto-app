@@ -47,7 +47,9 @@
                 url: '/home',
                 views: {
                     'menuContent': {
-                        template: '<b>teste</b>'
+                        templateUrl: 'templates/home.html',
+                        controller: 'HomeController',
+                        controllerAs: 'homeCtrl'
                     }
                 }
             });
