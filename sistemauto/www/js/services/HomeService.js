@@ -20,6 +20,7 @@
                     return deffered.resolve(data.data);
                 },
                 function(reason) {
+
                     return deffered.reject(reason);
                 });
             return deffered.promise;
