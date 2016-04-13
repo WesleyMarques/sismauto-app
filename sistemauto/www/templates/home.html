@@ -1,19 +1,19 @@
-<ion-view>
+<ion-view ng-init="homeCtrl.loadAll()">
     <ion-content>
         <div class="row row-center div-top-home input-search">
             <div class="list list-inset div-search">
                 <label class="item item-input">
                     <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" placeholder="Search">
+                    <input type="text" placeholder="Search" ng-model="searchFilter">
                 </label>
             </div>
         </div>
         <div class="row div-bottom-home div-search">
             <ion-scroll direction="y" style="width: 100vw; height: 55vh">
                 <div class="list div-search">
-                    <a class="item item-avatar div-search" href="#">
-                        <img src="venkman.jpg">
-                        <h2>Venkman</h2>
+                    <a class="item item-avatar div-search" href="#" ng-repeat="autoEscola in homeCtrl.autoEscolas | filter:searchFilter">
+                        <img src="img/car-front.png">
+                        <h2>{{autoEscola.company}}</h2>
                         <p>Back off, man. I'm a scientist.</p>
                     </a>
                     
