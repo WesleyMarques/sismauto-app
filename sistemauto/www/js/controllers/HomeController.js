@@ -17,7 +17,6 @@
 
         self.autoEscolas = [];
 
-
         $scope.$on('$ionicView.beforeEnter', function() {
             self.loadAll();
         })

@@ -6,17 +6,17 @@
      *
      * Description
      */
-    angular.module('sistemauto.controller').controller('LoginController', loginController);
+    angular.module('sistemauto.controller').controller('ClazzController', clazzController);
 
-    loginController.$injector = ['clazzService'];
+    clazzController.$injector = ['clazzService'];
 
-    function loginController(clazzService) {
+    function clazzController(ClazzService) {
         var self = this;
 
         self.myClasses = [];
 
         self.getAllClazz = function(){
-            clazzService.getAll().then(function(data){
+            ClazzService.getAll().then(function(data){
                 
             },function(reason){});
         };

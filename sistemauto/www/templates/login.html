@@ -16,12 +16,12 @@
                         </div>
                         <div class="col">
                             <label class="item item-input item-floating-label">
-                                <span class="input-label">E-MAIL</span>
-                                <input ng-model="loginCtrl.user.email" type="email" placeholder="E-MAIL" style="color:#FFFFFF">
+                                <span class="input-label">CPF</span>
+                                <input ng-model="loginCtrl.user.cpf" type="number" placeholder="CPF" style="color:#FFFFFF">
                             </label>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col col-10 col-bottom">
                             <i class="icon icon-login icon-senha-white"></i>
                         </div>
@@ -31,19 +31,19 @@
                                 <input ng-model="loginCtrl.user.password" type="password" placeholder="SENHA" style="color:#FFFFFF">
                             </label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col col-center">
-                            <button type="submit" ng-click="loginCtrl.doLogin()" class="button button-block button-balanced ink"> ENTRAR
+                            <button ng-click="loginCtrl.doLogin()" class="button button-block button-balanced ink"> ENTRAR
                             </button>
-                            <button type="submit" ng-click="loginCtrl.backHome()" class="button button-block button-assertive ink"> CANCELAR
+                            <button ng-click="loginCtrl.backHome()" class="button button-block button-assertive ink"> CANCELAR
                             </button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col-center col-text-center signupStatic">
                             Não é usuário?
-                            <span ui-sref="signup" class="signup-button">Cadastre-se<span>
+                            <span ui-sref="app.home" class="signup-button">Cadastre-se<span>
                         </div>
                     </div>
                 </div>

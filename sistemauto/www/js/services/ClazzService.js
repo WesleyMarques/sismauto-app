@@ -6,7 +6,7 @@
      *
      * Description
      */
-    angular.module('sistemauto.service').service('clazzService', clazzService);
+    angular.module('sistemauto.service').service('ClazzService', clazzService);
 
     clazzService.$injector = ['$q', '$http', 'userProfileService'];
 
