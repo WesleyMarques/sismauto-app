@@ -1,0 +1,21 @@
+.background-image {
+	background-color: #00796B;
+}
+
+.app-icon {
+	background: rgba(255, 255, 255, 0.7) url('../img/logo.png') no-repeat 12px 12px;
+	vertical-align: center;
+	background-size: 80%;
+	border-radius: 50%;
+	height: 125px;
+	margin: 0 auto;
+	width: 125px;
+}
+
+.hero.no-header {
+    height: 100% !important;
+}
+
+.input-label{
+	color: #FFFFFF !important;
+}

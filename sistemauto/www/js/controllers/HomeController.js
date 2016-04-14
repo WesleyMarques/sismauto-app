@@ -8,23 +8,32 @@
      */
     angular.module('sistemauto.controller').controller('HomeController', HomeController);
 
-    HomeController.$injector = ['autoEscolaService'];
-    
 
-    function HomeController(autoEscolaService) {
+    HomeController.$injector = ['autoEscolaService', '$scope'];
+
+
+    function HomeController(autoEscolaService, $scope) {
         var self = this;
 
         self.autoEscolas = [];
 
-        self.loadAll = function(){
+
+        $scope.$on('$ionicView.beforeEnter', function() {
+            self.loadAll();
+        })
+
+        self.loadAll = function() {
             autoEscolaService.getAll().then(
-                function(data){
+                function(data) {
+                    console.log(data);
                     self.autoEscolas = data;
-                },function(reason){
+                },
+                function(reason) {
                     console.log(reason);
                 });
         };
 
 
     };
+
 }());

@@ -30,18 +30,24 @@
             }
         });
     });
-
+    
+    //app.constant('ApiUrl', {url: 'http://localhost:8080/api'});
+    app.constant('ApiUrl', { url: 'http://sistemauto.herokuapp.com/api' });
 
     app.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('login', {
                 url: '/login',
-                templateUrl: 'templates/login.html'
+                templateUrl: 'templates/login.html',
+                controller: 'LoginController',
+                controllerAs: 'loginCtrl'
             })
             .state('app', {
                 url: '',
                 abstract: true,
-                templateUrl: 'templates/menu.html'
+                templateUrl: 'templates/menu.html',
+                controller: 'MenuController',
+                controllerAs: 'menuCtrl'
             })
             .state('app.home', {
                 url: '/home',

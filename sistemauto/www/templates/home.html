@@ -1,4 +1,4 @@
-<ion-view ng-init="homeCtrl.loadAll()">
+<ion-view>
     <ion-content>
         <div class="row row-center div-top-home input-search">
             <div class="list list-inset div-search">
@@ -10,13 +10,12 @@
         </div>
         <div class="row div-bottom-home div-search">
             <ion-scroll direction="y" style="width: 100vw; height: 55vh">
-                <div class="list div-search">
-                    <a class="item item-avatar div-search" href="#" ng-repeat="autoEscola in homeCtrl.autoEscolas | filter:searchFilter">
-                        <img src="img/car-front.png">
+                <div class="list div-search" ng-repeat="autoEscola in homeCtrl.autoEscolas | filter:search track by $index">
+                    <a class="item item-avatar div-search" href="#">
+                        <img src="img/autoescola-default.png">
                         <h2>{{autoEscola.company}}</h2>
-                        <p>Back off, man. I'm a scientist.</p>
+                        <p>{{autoEscola.email}}</p>
                     </a>
-                    
                 </div>
             </ion-scroll>
         </div>
