@@ -58,6 +58,16 @@
                         controllerAs: 'homeCtrl'
                     }
                 }
+            })
+            .state('app.clazz', {
+                url: '/clazz',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/clazz.html',
+                        controller: 'ClazzController',
+                        controllerAs: 'clazzCtrl'
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('/home');

@@ -23,6 +23,10 @@
         	window.localStorage.setItem('userId', id);
         }
 
+        self.getUserId = function(){
+            return window.localStorage.getItem('userId');
+        }
+
         return self;
     };
 
