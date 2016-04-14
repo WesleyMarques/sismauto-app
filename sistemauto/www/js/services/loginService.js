@@ -25,6 +25,26 @@
 
             return deferred.promise;
         };
+
+
+		/**
+		 * Realiza a requisição http para realizar logout no sistema.
+		 * 
+		 * @return {Promise} promessa da requisição.
+		 */
+		self.logout = function() {
+			var deferred = $q.defer();
+			
+			$http.post(ApiUrl.url + '/authenticate/logout').then(function(info) {
+				userProfileService.setTokenUser(null);
+				userProfileService.setUserId(null);
+				deferred.resolve(info);
+			}, function(error) {
+				deferred.reject(error);
+			});
+			
+			return deferred.promise;
+		};
         return self;
     };
 
