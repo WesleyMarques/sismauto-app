@@ -30,7 +30,7 @@
             }
         });
     });
-    
+
     //app.constant('ApiUrl', {url: 'http://localhost:8080/api'});
     app.constant('ApiUrl', { url: 'http://sistemauto.herokuapp.com/api' });
 
@@ -68,7 +68,18 @@
                         controllerAs: 'clazzCtrl'
                     }
                 }
+            })
+            .state('app.profile', {
+                url: '/profile',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/profile.html',
+                        controller: 'ProfileController',
+                        controllerAs: 'profileCtrl'
+                    }
+                }
             });
+
 
         $urlRouterProvider.otherwise('/home');
     });
