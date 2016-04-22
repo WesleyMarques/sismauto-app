@@ -9,10 +9,10 @@
     angular.module('sistemauto.controller').controller('HomeController', HomeController);
 
 
-    HomeController.$injector = ['autoEscolaService', '$scope'];
+    HomeController.$injector = ['autoEscolaService', '$scope', 'messageService'];
 
 
-    function HomeController(autoEscolaService, $scope) {
+    function HomeController(autoEscolaService, $scope, messageService) {
         var self = this;
 
         self.autoEscolas = [];
@@ -22,13 +22,14 @@
         })
 
         self.loadAll = function() {
+            messageService.loadingPopup("Carregando Auto escolas...");
             autoEscolaService.getAll().then(
                 function(data) {
-                    console.log(data);
+                    messageService.closePopup();
                     self.autoEscolas = data;
                 },
                 function(reason) {
-                    console.log(reason);
+                    messageService.alertPopup("Error", reason);
                 });
         };
 

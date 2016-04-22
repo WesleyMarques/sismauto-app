@@ -14,19 +14,19 @@
         var self = this;
 
         self.user = {};
-        self.test = "teste";
+        
         self.doLogin = function() {
-            console.log(self.user);
+            
             self.user.type = "student";
+            console.log(self.user);
             LoginService.login(self.user).then(function(info) {
                 $state.go('app.home');
             }, function(error) {
-                
+                console.log(error);
             });
         };
 
         self.backHome = function() {
-            console.log("esntre");
             $state.go('app.home');
         };
     };
