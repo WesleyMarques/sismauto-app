@@ -12,7 +12,22 @@
 
 
     function profileCtrl($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-        
+
+        var self = this;
+        self.autoEscola = null;
+
+        $scope.$on('$ionicView.beforeEnter', function() {
+            self.getAutoEscola();
+        });
+
+        self.getAutoEscola = function(){
+            if($stateParams.autoEscola){
+                self.autoEscola = $stateParams.autoEscola;
+            }
+            
+        }
+
+
         // Set Motion
         $timeout(function() {
             ionicMaterialMotion.slideUp({
@@ -30,4 +45,3 @@
         ionicMaterialInk.displayEffect();
     }
 }());
-

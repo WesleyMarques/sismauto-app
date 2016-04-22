@@ -77,7 +77,8 @@
                         controller: 'ProfileController',
                         controllerAs: 'profileCtrl'
                     }
-                }
+                },
+                params: {'autoEscola': undefined}
             });
 
 
