@@ -1,9 +1,55 @@
 <ion-view>
-    <ion-content>
-        <ion-list>
-            <ion-item ng-repeat="item in items">
-                Hello, {{item}}!
-            </ion-item>
-        </ion-list>
-    </ion-content>
+	<ion-content>
+		<div class="row">
+			<div class = "col text-center">
+				<h3> Aulas Marcadas </h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class = "col text-center">
+				<div class="card">
+			 		<div class="item item-divider">
+						Aula Teórica
+						<a class="item-icon-right" href="#"><i class="icon ion-trash-b"></i></a>
+					</div>
+					<div class="item item-text-wrap">
+						<i class="icon ion-calendar"></i> Horário: Quinta-feira (15/02) as 14h
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class = "col text-center">
+				<div class="card">
+			 		<div class="item item-divider">
+						Aula Teórica
+						<a class="item-icon-right" href="#"><i class="icon ion-trash-b"></i></a>
+					</div>
+					<div class="item item-text-wrap">
+						<i class="icon ion-calendar"></i> Horário: Quinta-feira (15/02) as 14h
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class = "col text-center">
+				<div class="card">
+			 		<div class="item item-divider">
+						Aula Teórica
+						<a class="item-icon-right" href="#"><i class="icon ion-trash-b"></i></a>
+					</div>
+					<div class="item item-text-wrap">
+						<i class="icon ion-calendar"></i> Horário: Quinta-feira (15/02) as 14h
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Deixei essa parte pq vai usar para fazer a repeticao -->
+		<ion-list>
+			<ion-item ng-repeat="item in items">
+				Hello, {{item}}!
+			</ion-item>
+		</ion-list>
+	</ion-content>
 </ion-view>
