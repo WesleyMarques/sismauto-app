@@ -24,8 +24,7 @@
         self.stateGo = function(nextState, data) {
             var newData = {};
             if (data) {      
-                newData.autoEscola = data;
-                console.log(newData)         
+                newData.autoEscola = data;     
                 $state.go(nextState, newData);
             } else {
                 $state.go(nextState);

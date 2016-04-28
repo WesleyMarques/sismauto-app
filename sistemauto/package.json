@@ -20,7 +20,5 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-inappbrowser"
   ],
-  "cordovaPlatforms": [
-    "android"
-  ]
+  "cordovaPlatforms": []
 }

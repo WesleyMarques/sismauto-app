@@ -1,27 +1,59 @@
 <ion-view view-title="Profile">
     <ion-content>
-        <div class="row row-top" style="height:40vh">
-            <div class="hero normalize slide-up" style="background-image: url('img/back-auto-escola.jpg');">
+        <div class="row row-top" style="height:30vh">
+            <div class="hero normalize slide-up" style="background-image: url('img/back-auto-escola.jpg');background-size:100% 100%">
                 <div class="content normalize">
                     <div class="avatar" style="background-image: url('img/daenerys.jpg');"></div>
                     <h4><a class="light">{{profileCtrl.autoEscola.company}}</a></h4>
-                    
                 </div>
             </div>
         </div>
         <div class="row" style="height: 10vh;">
             <div class="tabs tabs-dark tabs-icon-top static" style="position: relative">
-                <a ui-sref="login" class="tab-item">
-                    <i class="icon ion-person"></i> Sou Aluno
-                </a>
-                <a ui-sref="app.friends" class="tab-item">
+                <a ng-click="profileCtrl.setTabShow(0)" class="tab-item">
                     <i class="icon ion-android-textsms"></i> Mural
+                </a>
+                <a ng-click="profileCtrl.setTabShow(1)" class="tab-item">
+                    <i class="icon ion-person"></i> Sou Aluno
                 </a>
             </div>
         </div>
-        <row class="row" style="height: 50vh">
+        <row class="row" style="height: 60vh" ng-show="profileCtrl.tabShow(0)">
             <div class="list animate-fade-slide-in-right">
-                
+            </div>
+        </row>
+        <row class="row" style="height: 60vh" ng-show="profileCtrl.tabShow(1)">
+            <div class="list animate-fade-slide-in-right" style="width: 100%">
+                <div class="row bottom">
+                    <div class="col col-10 col-bottom">
+                        <i class="icon icon-login icon-user-white"></i>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">CPF</span>
+                            <input ng-model="profileCtrl.user.cpf" type="text" placeholder="CPF">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-10 col-bottom">
+                        <i class="icon icon-login icon-senha-white"></i>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">SENHA</span>
+                            <input ng-model="profileCtrl.user.password" type="password" placeholder="SENHA">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-center">
+                        <button ng-click="profileCtrl.doLogin()" class="button button-block button-balanced ink"> ENTRAR
+                        </button>
+                        <button ng-click="profileCtrl.clearForm()" class="button button-block button-assertive ink"> LIMPAR
+                        </button>
+                    </div>
+                </div>
             </div>
         </row>
     </ion-content>

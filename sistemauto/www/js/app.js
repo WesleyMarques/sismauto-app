@@ -36,12 +36,6 @@
 
     app.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('login', {
-                url: '/login',
-                templateUrl: 'templates/login.html',
-                controller: 'LoginController',
-                controllerAs: 'loginCtrl'
-            })
             .state('app', {
                 url: '',
                 abstract: true,
@@ -78,7 +72,7 @@
                         controllerAs: 'profileCtrl'
                     }
                 },
-                params: {'autoEscola': undefined}
+                params: { 'autoEscola': undefined }
             });
 
 
