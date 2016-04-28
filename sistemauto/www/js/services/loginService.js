@@ -12,12 +12,14 @@
          * 
          * @return {Promise} promessa da requisição.
          */
-        self.login = function(data) {
+        self.login = function(data, idAutoEscola) {
+            console.log(data);
             var deferred = $q.defer();
-
-            $http.post(ApiUrl.url + '/authenticate/login', data).then(function(info) {
+            $http.post(ApiUrl.url + '/authenticate/loginEstudante', data).then(function(info) {
+                console.log(info);
                 userProfileService.setTokenUser(info.data.token);
                 userProfileService.setUserId(info.data.id);
+                userProfileService.setAutoId(idAutoEscola);
                 deferred.resolve({});
             }, function(error) {
                 deferred.reject(error);

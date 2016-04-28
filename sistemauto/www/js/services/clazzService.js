@@ -15,7 +15,7 @@
 
         self.getAll = function(idStudent) {
             var deferred = $q.defer();
-            var url = ApiUrl.url + '/user/' + userProfileService.getUserId() + "/student/" + userProfileService.getUserId() + '/clazz';
+            var url = ApiUrl.url + '/user/' + userProfileService.getAutoId() + "/student/" + userProfileService.getUserId() + '/clazz';
             $http.get(url).then(function(info) {
                 deferred.resolve(info);
             }, function(error) {

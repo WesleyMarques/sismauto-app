@@ -11,20 +11,28 @@
                 return window.localStorage.user;
         };
 
-        self.isUserLogged = function(){
-        	return (window.localStorage.getItem('userId') !== null);
+        self.isUserLogged = function() {
+            return (window.localStorage.getItem('userId') !== null);
         };
 
-        self.setTokenUser = function(token){
-        	window.localStorage.setItem('token', token);
+        self.setTokenUser = function(token) {
+            window.localStorage.setItem('token', token);
         };
 
-        self.setUserId = function(id){
-        	window.localStorage.setItem('userId', id);
+        self.setUserId = function(id) {
+            window.localStorage.setItem('userId', id);
         }
 
-        self.getUserId = function(){
+        self.setAutoId = function(id) {
+            window.localStorage.setItem('autoId', id);
+        }
+
+        self.getUserId = function() {
             return window.localStorage.getItem('userId');
+        }
+
+        self.getAutoId = function() {
+            return window.localStorage.getItem('autoId');
         }
 
         return self;

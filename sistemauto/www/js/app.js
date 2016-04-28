@@ -30,6 +30,10 @@
         });
     });
 
+    app.config(function ($httpProvider) {
+        $httpProvider.interceptors.push('Interceptor');
+    });
+
     //app.constant('ApiUrl', {url: 'http://localhost:8080/api'});
     app.constant('ApiUrl', { url: 'http://sistemauto.herokuapp.com/api' });
 

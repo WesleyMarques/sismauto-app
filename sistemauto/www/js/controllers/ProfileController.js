@@ -42,9 +42,7 @@
         };
 
         self.doLogin = function() {
-            
-            self.user.type = "student";
-            LoginService.login(self.user).then(function(info) {
+            LoginService.login(self.user, self.autoEscola._id).then(function(info) {
                 $state.go('app.home');
             }, function(error) {
                 console.log(error);
