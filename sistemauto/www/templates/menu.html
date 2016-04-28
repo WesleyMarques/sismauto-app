@@ -27,7 +27,8 @@
                     <i class="icon icon-menu home-mapa"></i>
                     <span class="menu-label">Home</span>
                 </ion-item>
-                <ion-item class="item-icon-left item-menu" menu-close href="#/aulas" ng-show="menuCtrl.isUserLogged()">
+                <!-- TODO Tirar ! quando conseguir logar, esta assim para poder fazer a view das aulas -->
+                <ion-item class="item-icon-left item-menu" menu-close href="#/clazz" ng-show="!menuCtrl.isUserLogged()">
                     <i class="icon icon-menu home-mapa"></i>
                     <span class="menu-label">Aulas</span>
                 </ion-item>
