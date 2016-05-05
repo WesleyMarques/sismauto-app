@@ -20,7 +20,6 @@
         };
 
         self.logout = function() {
-            console.log("cheguei");
             LoginService.logout().then(function() {
                 console.log("done");
                 $state.go("app.home");

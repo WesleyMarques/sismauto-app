@@ -12,7 +12,7 @@
         };
 
         self.isUserLogged = function(){
-        	return (window.localStorage.getItem('userId') !== null);
+        	return (window.localStorage.getItem('userId') !== "null");
         };
 
         self.setTokenUser = function(token){

@@ -16,11 +16,8 @@
         self.user = {};
         
         self.doLogin = function() {
-            
-            self.user.type = "student";
-            console.log(self.user);
             LoginService.login(self.user).then(function(info) {
-                $state.go('app.home');
+                $state.go('app.clazz');
             }, function(error) {
                 console.log(error);
             });
