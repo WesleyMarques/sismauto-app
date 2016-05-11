@@ -27,6 +27,14 @@
             return window.localStorage.getItem('userId');
         }
 
+        this.getPushToken = function() {
+            return window.localStorage.getItem('push-token');
+        };
+
+        this.setPushToken = function(token) {
+            window.localStorage.setItem('push-token', token);
+        };
+
         return self;
     };
 

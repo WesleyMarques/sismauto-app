@@ -7,14 +7,14 @@
     angular.module('sistemauto.service', []);
 
     var app = angular.module('sistemauto', [
-        'ionic',
+        'ionic','ionic.service.core',
         'ngCordova',
         'ionic-material',
         'sistemauto.service',
         'sistemauto.controller'
     ]);
 
-    app.run(function($ionicPlatform) {
+    app.run(function($ionicPlatform, userProfileService) {
         $ionicPlatform.ready(function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -27,6 +27,15 @@
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+
+            var push = new Ionic.Push({
+				"debug": true
+  			});
+
+  			push.register(function(token) {
+                userProfileService.setPushToken(token.token);
+      			console.log("Device token:",token.token);
+    		});
         });
     });
 
