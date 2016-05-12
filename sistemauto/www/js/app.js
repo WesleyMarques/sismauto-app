@@ -7,14 +7,14 @@
     angular.module('sistemauto.service', []);
 
     var app = angular.module('sistemauto', [
-        'ionic',
+        'ionic','ionic.service.core',
         'ngCordova',
         'ionic-material',
         'sistemauto.service',
         'sistemauto.controller'
     ]);
 
-    app.run(function($ionicPlatform) {
+    app.run(function($ionicPlatform, userProfileService) {
         $ionicPlatform.ready(function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -27,10 +27,22 @@
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+
+            var push = new Ionic.Push({
+				"debug": true
+  			});
+
+  			push.register(function(token) {
+                console.log('token abaixo');
+                console.log(token);
+                userProfileService.setPushToken(token.token);
+      			console.log("Device token:",token.token);
+                push.saveToken(token);
+    		});
         });
     });
 
-    //app.constant('ApiUrl', {url: 'http://localhost:8080/api'});
+    // app.constant('ApiUrl', {url: 'http://localhost:8080/api'});
     app.constant('ApiUrl', { url: 'http://sistemauto.herokuapp.com/api' });
 
     app.config(function($stateProvider, $urlRouterProvider) {

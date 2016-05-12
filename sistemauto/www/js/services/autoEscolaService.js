@@ -16,7 +16,7 @@
         self.getAll = function() {
             messageService.loadingPopup("Carregando Auto escolas...");
             var deffered = $q.defer();
-            $http.get("http://sistemauto.herokuapp.com/api/user").then(
+            $http.get(ApiUrl.url + "/user").then(
                 function(data) {
                     messageService.closePopup();
                     return deffered.resolve(data.data);

@@ -14,8 +14,8 @@
          * @return {Promise} promessa da requisição.
          */
         self.login = function(data) {
-            console.log("login");
             messageService.loadingPopup("Loading...");
+
             var deferred = $q.defer();
             console.log(ApiUrl.url + '/authenticate/loginEstudant');
             $http.post(ApiUrl.url + '/authenticate/loginEstudante', data).then(function(info) {

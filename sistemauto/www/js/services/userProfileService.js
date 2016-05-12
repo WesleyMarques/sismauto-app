@@ -27,6 +27,7 @@
             return window.localStorage.getItem('userId');
         }
 
+
         self.setAutoId = function(id){
             window.localStorage.setItem('autoId', id);
         }
@@ -34,6 +35,15 @@
         self.getAutoId = function(){
             return window.localStorage.getItem('autoId');
         }
+
+        this.getPushToken = function() {
+            return window.localStorage.getItem('push-token');
+        };
+
+        this.setPushToken = function(token) {
+            window.localStorage.setItem('push-token', token);
+        };
+
 
         return self;
     };
