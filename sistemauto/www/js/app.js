@@ -7,7 +7,7 @@
     angular.module('sistemauto.service', []);
 
     var app = angular.module('sistemauto', [
-        'ionic',
+        'ionic','ionic.service.core',
         'ngCordova',
         'ionic-material',
         'sistemauto.service',
