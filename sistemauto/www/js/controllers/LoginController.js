@@ -16,7 +16,7 @@
         self.user = {};
         
         self.doLogin = function() {
-            user.pushToken = userProfileService.getPushToken();
+            self.user.pushToken = userProfileService.getPushToken();
             LoginService.login(self.user).then(function(info) {
                 $state.go('app.clazz');
             }, function(error) {

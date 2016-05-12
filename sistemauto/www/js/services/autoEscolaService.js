@@ -8,15 +8,15 @@
      */
     angular.module('sistemauto.service').service('autoEscolaService', autoEscolaService);
 
-    autoEscolaService.$injector = ['$q', '$http', 'messageService'];
+    autoEscolaService.$injector = ['$q', '$http', 'messageService', 'ApiUrl'];
 
-    function autoEscolaService($q, $http, messageService) {
+    function autoEscolaService($q, $http, messageService, ApiUrl) {
         var self = this;
 
         self.getAll = function() {
             messageService.loadingPopup("Carregando Auto escolas...");
             var deffered = $q.defer();
-            $http.get("http://sistemauto.herokuapp.com/api/user").then(
+            $http.get(ApiUrl.url + "/user").then(
                 function(data) {
                     messageService.closePopup();
                     return deffered.resolve(data.data);

@@ -33,13 +33,16 @@
   			});
 
   			push.register(function(token) {
+                console.log('token abaixo');
+                console.log(token);
                 userProfileService.setPushToken(token.token);
       			console.log("Device token:",token.token);
+                push.saveToken(token);
     		});
         });
     });
 
-    //app.constant('ApiUrl', {url: 'http://localhost:8080/api'});
+    // app.constant('ApiUrl', {url: 'http://localhost:8080/api'});
     app.constant('ApiUrl', { url: 'http://sistemauto.herokuapp.com/api' });
 
     app.config(function($stateProvider, $urlRouterProvider) {

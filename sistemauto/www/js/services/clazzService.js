@@ -8,9 +8,9 @@
      */
     angular.module('sistemauto.service').service('ClazzService', clazzService);
 
-    clazzService.$injector = ['$q', '$http', 'userProfileService'];
+    clazzService.$injector = ['$q', '$http', 'userProfileService', 'ApiUrl'];
 
-    function clazzService($q, $http, userProfileService) {
+    function clazzService($q, $http, userProfileService, ApiUrl) {
         var self = this;
 
         self.getAll = function(idStudent) {

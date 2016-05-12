@@ -14,6 +14,7 @@
          * @return {Promise} promessa da requisição.
          */
         self.login = function(data) {
+            console.log("ira fazer o post");
             var deferred = $q.defer();
             $http.post(ApiUrl.url + '/authenticate/loginEstudante', data).then(function(info) {
                 userProfileService.setTokenUser(info.data.token);
