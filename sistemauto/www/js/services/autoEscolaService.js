@@ -8,9 +8,9 @@
      */
     angular.module('sistemauto.service').service('autoEscolaService', autoEscolaService);
 
-    autoEscolaService.$injector = ['$q', '$http', 'messageService'];
+    autoEscolaService.$injector = ['$q', '$http', 'messageService', 'ApiUrl'];
 
-    function autoEscolaService($q, $http, messageService) {
+    function autoEscolaService($q, $http, messageService, ApiUrl) {
         var self = this;
 
         self.getAll = function() {

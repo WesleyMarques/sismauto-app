@@ -16,6 +16,7 @@
         self.user = {};
         
         self.doLogin = function() {
+            console.log("login1");
             LoginService.login(self.user).then(function(info) {
                 $state.go('app.clazz');
             }, function(error) {

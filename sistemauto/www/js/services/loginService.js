@@ -2,9 +2,9 @@
     'use strict';
     angular.module('sistemauto.service').service('LoginService', loginService);
 
-    loginService.$injector = ['$q', '$http', 'userProfileService', 'ApiUrl'];
+    loginService.$injector = ['$q', '$http', 'userProfileService', 'ApiUrl', 'messageService'];
 
-    function loginService($q, $http, userProfileService, ApiUrl) {
+    function loginService($q, $http, userProfileService, ApiUrl, messageService) {
         var self = this;
         
         /**
@@ -14,12 +14,19 @@
          * @return {Promise} promessa da requisição.
          */
         self.login = function(data) {
+            console.log("login");
+            messageService.loadingPopup("Loading...");
             var deferred = $q.defer();
+            console.log(ApiUrl.url + '/authenticate/loginEstudant');
             $http.post(ApiUrl.url + '/authenticate/loginEstudante', data).then(function(info) {
                 userProfileService.setTokenUser(info.data.token);
                 userProfileService.setUserId(info.data.id);
+                userProfileService.setAutoId(info.data.autoId);                
+                messageService.closePopup();
                 deferred.resolve({});
+
             }, function(error) {
+                messageService.alertPopup("Error", error.data.message);
                 deferred.reject(error);
             });
 
@@ -38,6 +45,8 @@
 			$http.post(ApiUrl.url + '/authenticate/logout').then(function(info) {
 				userProfileService.setTokenUser(null);
 				userProfileService.setUserId(null);
+                userProfileService.setAutoId(null);
+                
 				deferred.resolve(info);
 			}, function(error) {
 				deferred.reject(error);

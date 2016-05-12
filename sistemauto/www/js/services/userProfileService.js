@@ -27,6 +27,14 @@
             return window.localStorage.getItem('userId');
         }
 
+        self.setAutoId = function(id){
+            window.localStorage.setItem('autoId', id);
+        }
+
+        self.getAutoId = function(){
+            return window.localStorage.getItem('autoId');
+        }
+
         return self;
     };
 
